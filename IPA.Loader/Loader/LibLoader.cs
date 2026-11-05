@@ -12,7 +12,8 @@ using System.Reflection;
 
 namespace IPA.Loader
 {
-    internal class CecilLibLoader : BaseAssemblyResolver
+    // Reuse metadata for normal lookups while preserving explicit ReaderParameters reads.
+    internal class CecilLibLoader : DefaultAssemblyResolver
     {
         private static readonly string CurrentAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
         private static readonly string CurrentAssemblyPath = Assembly.GetExecutingAssembly().Location;
