@@ -255,3 +255,5 @@ paket-files/
 /.wiki
 /mdinstalldir.txt
 /gource.mp4
+
+*.local.*

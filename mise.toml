@@ -1,0 +1,12 @@
+[tasks.install]
+description = "Install a complete BSIPA package with the locally built loader"
+usage = '''
+flag "--game <game>" env="GameDirectory" required=#true help="Beat Saber installation directory"
+flag "--package <package>" env="BSIPA_PACKAGE_DIR" required=#true help="Extracted BSIPA package directory"
+'''
+run = "pwsh -NoProfile -File scripts/install.ps1 -Mode Install"
+
+[tasks.reinstall]
+description = "Build and replace only the loader in an existing BSIPA installation"
+usage = 'flag "--game <game>" env="GameDirectory" required=#true help="Beat Saber installation directory"'
+run = "pwsh -NoProfile -File scripts/install.ps1 -Mode Reinstall"
