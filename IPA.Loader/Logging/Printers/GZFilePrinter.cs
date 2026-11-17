@@ -118,7 +118,7 @@ namespace IPA.Logging.Printers
         {
             InitLog();
 
-            fstream = fileInfo.Open(FileMode.Append, FileAccess.Write);
+            fstream = fileInfo.Open(FileMode.Append, FileAccess.Write, FileShare.Read);
             FileWriter = new StreamWriter(fstream, new UTF8Encoding(false));
         }
 
